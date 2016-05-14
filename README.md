@@ -6,9 +6,13 @@ Dockerfile für Apache Load-Balancer
 docker build -t apache-load-balancer-for-docker .
 ```
 
-##Container starten:
+##Container starten (mit Beispielkonfiguration):
 ```
 docker run -d --name alb -p 80:80 -p 443:443 apache-load-balancer-for-docker
+```
+##Container starten (mit eigener Konfiguration):
+```
+docker run -d --name alb -p 80:80 -p 443:443 -v ./conf/extra/httpd-proxy-balancer.conf:/usr/local/apache2/conf/extra/httpd-proxy-balancer.conf apache-load-balancer-for-docker
 ```
 
 ##Quellen:
