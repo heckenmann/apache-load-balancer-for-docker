@@ -10,6 +10,11 @@ docker build -t apache-load-balancer-for-docker .
 ```
 docker run -d --name alb -p 80:80 -p 443:443 apache-load-balancer-for-docker
 ```
+###Beispielaufruf
+```
+http://127.0.0.1/google
+```
+
 ##Container starten (mit eigener Konfiguration):
 ```
 docker run -d --name alb -p 80:80 -p 443:443 -v ./conf/extra/httpd-proxy-balancer.conf:/usr/local/apache2/conf/extra/httpd-proxy-balancer.conf apache-load-balancer-for-docker
